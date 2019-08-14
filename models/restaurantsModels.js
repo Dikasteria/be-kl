@@ -11,4 +11,16 @@ const fetchAllRestaurants = cb => {
   });
 };
 
-module.exports = { fetchAllRestaurants };
+const fetchRestaurantByID = (ID, cb) => {
+  fs.readFile("./data/restaurants.json", (err, restaurants) => {
+    const parsedRestaurants = JSON.parse(restaurants);
+    const singleRestaurant = parsedRestaurants.filter(function(restaurant) {
+      if (ID == restaurant.id) {
+        return restaurant;
+      }
+    });
+    cb(null, singleRestaurant);
+  });
+};
+
+module.exports = { fetchAllRestaurants, fetchRestaurantByID };

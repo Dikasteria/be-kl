@@ -5,4 +5,4 @@ const { apiRouter } = require("./routers/apiRouter");
 // app.use(express.json());
 app.use("/api", apiRouter);
 
-module.exports = app;
+module.exports = { app };
