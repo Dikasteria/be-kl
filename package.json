@@ -4,8 +4,8 @@
   "description": "This task comes with a JSON file containing restaurant data. The challenge is to build an Express REST API which provides restaurant information to the user. In one hour, please complete as many of the tasks as possible. We do not expect you to finish this test, just do as much as possible in the time frame.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon listen.js"
+    "dev": "nodemon listen.js",
+    "test": "mocha spec/server.spec.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,10 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/luis-gregson/server-tech-test#readme",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-sorted": "^0.2.0",
     "express": "^4.17.1",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.1"
   }
 }
