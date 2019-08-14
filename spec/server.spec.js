@@ -32,5 +32,13 @@ describe("/api", () => {
           );
         });
     });
+    it("status: 404, restaurant not found", () => {
+      return request
+        .get("/api/restaurants/100")
+        .expect(404)
+        .then(({ body: { status } }) => {
+          expect(status).to.equal(404);
+        });
+    });
   });
 });
